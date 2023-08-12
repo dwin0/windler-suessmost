@@ -13,9 +13,9 @@
  * Homepage:  http://fontawesome.github.com/Font-Awesome/ */
 
 
-+font-face('fontello', '../icons/fontello', 'fontello', normal, normal)
++font-face('fontello', '../icons/fontello')
 
-[class^="icon-"]:before, [class*=" icon-"]:before
+[class^="icon-"]::before, [class*=" icon-"]::before
   font-family: "fontello"
   font-style: normal
   font-weight: normal
@@ -35,32 +35,29 @@
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
-.icon-tint:before
+.icon-tint::before
   content: '\e800'
 
-.icon-arrow-down:before
+.icon-arrow-down::before
   content: '\e801'
 
-.icon-phone-outline:before
+.icon-phone-outline::before
   content: '\e802'
 
-.icon-apple:before
+.icon-apple::before
   content: '\e803'
 
-.icon-gift:before
-  content: '\e804'
-
-.icon-mail:before
+.icon-mail::before
   content: '\e805'
 
-.icon-map-o:before
+.icon-map-o::before
   content: '\e806'
 
-.icon-handshake-o:before
+.icon-handshake-o::before
   content: '\e807'
 
-.icon-home:before
+.icon-home::before
   content: '\e808'
 
-.icon-basket:before
+.icon-basket::before
   content: '\e809'

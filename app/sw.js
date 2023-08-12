@@ -1,10 +1,10 @@
-const cacheName = "windler-cache-v3";
+const cacheName = "windler-cache-v4";
 
-self.addEventListener("install", event => {
+self.addEventListener("install", (event) => {
   event.waitUntil(
     caches
       .open(cacheName)
-      .then(cache =>
+      .then((cache) =>
         cache.addAll([
           "/",
           "/index.html",
@@ -20,7 +20,6 @@ self.addEventListener("install", event => {
           "/assets/images/products/aepfel-am-baum.jpg",
           "/assets/images/products/apfelbluete.jpg",
           "/assets/images/products/frischer-apfelsaft-tropft-vom-band.jpg",
-          "/assets/images/products/geschenkkistli.jpg",
           "/assets/images/products/mobile-bandpresse-auf-anhaenger.jpg",
           "/assets/images/products/obstanlage.jpg",
           "/assets/images/products/trester-rutscht-vom-band.jpg",
@@ -28,7 +27,7 @@ self.addEventListener("install", event => {
           "/assets/pdfs/gold-auszeichnung-2013-min.pdf",
           "/assets/pdfs/gold-auszeichnung-2013-vorschau.jpg",
           "/assets/pdfs/gold-auszeichnung-2018-min.pdf",
-          "/assets/pdfs/gold-auszeichnung-2018-vorschau.jpg"
+          "/assets/pdfs/gold-auszeichnung-2018-vorschau.jpg",
         ])
       )
       .then(() => self.skipWaiting())
@@ -49,11 +48,11 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
       .open(cacheName)
-      .then(cache => cache.match(event.request, { ignoreSearch: true }))
-      .then(response => response || fetch(event.request))
+      .then((cache) => cache.match(event.request, { ignoreSearch: true }))
+      .then((response) => response || fetch(event.request))
   );
 });

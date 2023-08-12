@@ -56,18 +56,25 @@
       crossorigin="anonymous"
     />
 
-    <!--stylesheets-->
-    <link rel="stylesheet" href="assets/dist/main.css?v=1" type="text/css" />
+    <!--bundles-->
+    <link rel="stylesheet" href="assets/dist/main.css?v=2" type="text/css" />
+    <script src="assets/dist/main.js?v=2" defer type="text/javascript"></script>
+
     <title>Windler Süssmost</title>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H6JLVDXXHW"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H6JLVDXXHW"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-H6JLVDXXHW');
+      gtag("config", "G-H6JLVDXXHW");
     </script>
   </head>
 
@@ -221,27 +228,6 @@
                 alt="Trester rutscht von der Bandpresse"
                 data-ratio="0.6666666666666667"
               />
-            </div>
-          </section>
-
-          <section class="product columns">
-            <div class="columns__column-image">
-              <img
-                class="product__image"
-                data-src="assets/images/products/geschenkkistli.jpg"
-                alt="Geschenkkistli mit regionalen Produkten"
-                data-ratio="0.5625"
-              />
-            </div>
-            <div class="columns__column-text">
-              <i class="product__icon icon-gift"></i>
-              <h1 class="product__title">Verschenken</h1>
-              <p class="product__text">
-                Überraschen Sie Ihre liebsten Bekannten oder Ihren treusten
-                Kunden mit einem feinen Thurgauer Süssmost. Nach Ihren Wünschen
-                stellen wir Ihnen zudem ein Geschenkkistli mit unserem Süssmost
-                und anderen feinen Produkten aus der Region zusammen.
-              </p>
             </div>
           </section>
         </div>
@@ -420,7 +406,5 @@
         </div>
       </section>
     </main>
-
-    <script src="assets/dist/main.js?v=2" type="text/javascript"></script>
   </body>
 </html>

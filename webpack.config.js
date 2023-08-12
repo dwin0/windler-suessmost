@@ -1,14 +1,10 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const cssnano = require('cssnano');
+const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: [
-    './app/assets/js/main.js',
-    './app/assets/styles/main.sass'
-  ],
+  entry: ["./app/assets/js/main.js", "./app/assets/styles/main.sass"],
   output: {
-    path: __dirname + '/app/assets/dist',
+    path: __dirname + "/app/assets/dist",
     filename: "main.js",
   },
   module: {
@@ -16,69 +12,56 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-proposal-class-properties']
-          }
-        }
+        use: ["babel-loader"],
       },
       {
         test: /\.(sass|scss)$/,
-        use: ExtractTextPlugin.extract({
-          use: [
-            'css-loader',
-            {
-              loader: 'postcss-loader',
-              options: {
-                plugins: () => [cssnano({
-                  preset: ['default', {
-                    discardComments: {
-                      removeAll: true,
-                    },
-                  }]
-                })]
-              }
+        use: [
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                includePaths: ["./node_modules/normalize-scss/sass"],
+              },
             },
-            {
-              loader: 'sass-loader',
-              options: {
-                sassOptions: {
-                  includePaths: [
-                    './node_modules/normalize-scss/sass'
-                  ]
-                }
-              }
-            }
-          ]
-        })
+          },
+        ],
       },
       {
-        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]'
-            }
-          }
-        ]
-      }
-    ]
+        test: /\.(woff|woff2|ttf)$/,
+        type: "asset/resource",
+        generator: {
+          filename: "[name][ext]",
+        },
+      },
+    ],
+  },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: "styles",
+          type: "css/mini-extract",
+          chunks: "all",
+          enforce: true,
+        },
+      },
+    },
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename: '[name].css',
-      allChunks: true,
-    }),
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      notify: false,
-      server: {
-        baseDir: ['app']
-      }
+    new MiniCssExtractPlugin({
+      filename: "main.css",
     }),
   ],
+  devServer: {
+    static: {
+      directory: path.join(__dirname, "app"),
+    },
+    port: 3000,
+    devMiddleware: {
+      writeToDisk: true,
+    },
+  },
 };

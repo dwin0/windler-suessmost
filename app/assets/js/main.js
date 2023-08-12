@@ -1,8 +1,10 @@
-import lazyLoad from './modules/LazyLoader';
-import addHoverListener from './modules/ImageHover';
-import { getById } from './modules/Shortcuts';
-import Menu from './modules/Menu';
-import { createStickyNavigation, highlightCurrentSection } from './modules/Navigation';
+import lazyLoad from "./modules/LazyLoader";
+import { getById } from "./modules/Shortcuts";
+import Menu from "./modules/Menu";
+import {
+  createStickyNavigation,
+  highlightCurrentSection,
+} from "./modules/Navigation";
 
 // STARTLoad header video if desktop
 
@@ -21,28 +23,30 @@ if (window.innerWidth >= 768) {
   };
 }
 
- // END Load header video
+// END Load header video
 
-const isMobile = window.getComputedStyle(getById('menu-button')).display !== 'none'
+const isMobile =
+  window.getComputedStyle(getById("menu-button")).display !== "none";
 
-const productImages = document.querySelectorAll('.products [data-src]');
+const productImages = document.querySelectorAll(".products [data-src]");
 lazyLoad(productImages, true);
-addHoverListener(productImages);
 
-const otherImages = document.querySelectorAll('[data-src]:not(.reveal-on-scroll)');
+const otherImages = document.querySelectorAll(
+  "[data-src]:not(.reveal-on-scroll)"
+);
 lazyLoad(otherImages, false);
 
 const mobileMenu = new Menu({
-  menuButton: getById('menu-button'),
-  menuList: getById('menu-list'),
-  headerArrowDown: getById('header-arrow-down'),
+  menuButton: getById("menu-button"),
+  menuList: getById("menu-list"),
+  headerArrowDown: getById("header-arrow-down"),
   isMobile: isMobile,
 });
 
-const navigation = getById('navigation');
-createStickyNavigation(navigation, getById('header'), isMobile);
-highlightCurrentSection(document.querySelectorAll('section[id]'), navigation);
+const navigation = getById("navigation");
+createStickyNavigation(navigation, getById("header"), isMobile);
+highlightCurrentSection(document.querySelectorAll("section[id]"), navigation);
 
-if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js')
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js");
 }
