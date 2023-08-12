@@ -36,11 +36,9 @@ const otherImages = document.querySelectorAll(
 );
 lazyLoad(otherImages, false);
 
-const mobileMenu = new Menu({
+new Menu({
   menuButton: getById("menu-button"),
   menuList: getById("menu-list"),
-  headerArrowDown: getById("header-arrow-down"),
-  isMobile: isMobile,
 });
 
 const navigation = getById("navigation");
