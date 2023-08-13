@@ -1,4 +1,4 @@
-const cacheName = "windler-cache-v4";
+const cacheName = "windler-cache-v5";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -24,6 +24,8 @@ self.addEventListener("install", (event) => {
           "/assets/images/products/obstanlage.jpg",
           "/assets/images/products/trester-rutscht-vom-band.jpg",
           "/assets/images/products/unsere-produkte.jpg",
+          "/assets/images/medaille-ostschweizer-fruchtsaftprämierung-2023.jpeg",
+          "/assets/pdfs/Rangliste-1-Ostschweizer-Fruchtsaftpraemierung.pdf",
           "/assets/pdfs/gold-auszeichnung-2013-min.pdf",
           "/assets/pdfs/gold-auszeichnung-2013-vorschau.jpg",
           "/assets/pdfs/gold-auszeichnung-2018-min.pdf",

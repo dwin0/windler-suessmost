@@ -1,4 +1,4 @@
-import lazyLoad from "./modules/LazyLoader";
+import slideIn from "./modules/ImageSlideIn";
 import { getById } from "./modules/Shortcuts";
 import Menu from "./modules/Menu";
 import {
@@ -28,13 +28,8 @@ if (window.innerWidth >= 768) {
 const isMobile =
   window.getComputedStyle(getById("menu-button")).display !== "none";
 
-const productImages = document.querySelectorAll(".products [data-src]");
-lazyLoad(productImages, true);
-
-const otherImages = document.querySelectorAll(
-  "[data-src]:not(.reveal-on-scroll)"
-);
-lazyLoad(otherImages, false);
+const productImages = document.querySelectorAll(".products img");
+slideIn(productImages);
 
 new Menu({
   menuButton: getById("menu-button"),
