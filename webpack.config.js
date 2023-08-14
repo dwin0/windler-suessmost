@@ -20,6 +20,14 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           "css-loader",
           {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: ["postcss-preset-env"],
+              },
+            },
+          },
+          {
             loader: "sass-loader",
             options: {
               sassOptions: {
@@ -59,6 +67,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "app"),
     },
+    open: true,
     port: 3000,
     devMiddleware: {
       writeToDisk: true,
