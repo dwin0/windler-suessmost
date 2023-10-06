@@ -106,11 +106,8 @@
         </picture>
         <div class="header__circle">
           <div class="header__text-content">
-            <h1 class="header__title">Windler <br />Süssmost</h1>
-            <h2 class="header__subtitle">
-              ein edles <br />
-              Getränk!
-            </h2>
+            <h1 class="header__title">Windler Süssmost</h1>
+            <p class="header__subtitle">ein edles Getränk!</p>
             <a
               aria-label="Produkte"
               href="#products"
@@ -154,16 +151,17 @@
     <main>
       <section id="products" class="products">
         <div class="wrapper">
-          <h1 class="products__title">Produkte</h1>
+          <h2 class="products__title">Produkte</h2>
 
           <section class="product columns">
             <div class="columns__column-text">
-              <i class="product__icon icon-tint"></i>
-              <h1 class="product__title">Süssmost</h1>
+              <i class="product__icon icon-tint" aria-hidden="true"></i>
+              <h3 class="product__title">Süssmost</h3>
               <p class="product__text">
                 Seit über 20 Jahren verarbeiten wir unser Obst zu erfrischendem
                 Süssmost. Dieser wurde schon mehrfach ausgezeichnet.
-                <br />
+              </p>
+              <p class="product__text">
                 Erhältlich ist er in den folgenden Grössen:
               </p>
               <ul class="product__list">
@@ -196,13 +194,14 @@
               />
             </div>
             <div class="columns__column-text">
-              <i class="product__icon icon-apple"></i>
-              <h1 class="product__title">Äpfel ab Hof</h1>
+              <i class="product__icon icon-apple" aria-hidden="true"></i>
+              <h3 class="product__title">Äpfel ab Hof</h3>
               <p class="product__text">
                 Im Herbst verkaufen wir Obst ab Hof. Dazu gehören Äpfel, Birnen
                 und Zwetschgen. Bei uns reifen Apfelsorten wie Gravensteiner,
                 Boskoop und Jonagold.
-                <br />
+              </p>
+              <p class="product__text">
                 Kommen Sie mit und suchen Sie sich Ihren Lieblingsapfel frisch
                 ab Baum.
               </p>
@@ -211,13 +210,14 @@
 
           <section class="product columns">
             <div class="columns__column-text">
-              <i class="product__icon icon-handshake-o"></i>
-              <h1 class="product__title">Kundenmosterei</h1>
+              <i class="product__icon icon-handshake-o" aria-hidden="true"></i>
+              <h3 class="product__title">Kundenmosterei</h3>
               <p class="product__text">
                 Gerne pressen wir auch Ihre frischen Äpfel und Birnen. Sie
                 erhalten Most aus Ihrem eigenen Obst. Auf Wunsch pasteurisieren
                 wir den Saft und füllen ihn in die gewünschten Gebinde ab.
-                <br />
+              </p>
+              <p class="product__text">
                 Kontaktieren Sie uns für einen Termin – Wir freuen uns auf Sie.
               </p>
             </div>
@@ -235,80 +235,98 @@
 
       <section id="about" class="additional-section additional-section--white">
         <div class="about-us wrapper">
-          <h1 class="additional-section__title">Über uns</h1>
+          <h2 class="additional-section__title">Über uns</h2>
           <p class="additional-section__text">
             Wir sind ein Familienbetrieb und halten Swiss Black Angus Weidebeef.
             Im Herbst betreiben wir eine Kundenmosterei und verarbeiten eigene
             Äpfel zu hochwertigem Süssmost. Das Obst stammt aus unserer
             Obstanlage und von unseren Hochstammbäumen.
           </p>
-          <h2 class="additional-section__subtitle">Verkaufsorte</h2>
+          <h3 class="additional-section__subtitle">Verkaufsorte</h3>
           <p class="additional-section__text">
             Unseren Süssmost verkaufen wir ab Hof und in einigen Läden der
             Region. Wenn Sie uns vor Ihrem Besuch kontaktieren, sind wir gerne
             für Sie da.
           </p>
-          <div>
-            <div class="desktop-columns_mobile-rows">
-              <div class="additional-section__entry">
-                <i class="additional-section__entry-icon icon-home"></i>
-                <span class="additional-section__entry-icon-text"
-                  >Direkt ab Hof</span
-                >
-              </div>
-              <div class="additional-section__entry">
-                <a
-                  class="additional-section__entry-icon-text additional-section__entry-link"
-                  href="https://www.hoflaedeli-fueglister.ch/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="additional-section__entry-icon icon-home"></i>
-                  <span>Hoflädeli Füglister <br />Braunau</span>
-                </a>
-              </div>
-            </div>
+          <ul class="sales-locations">
+            <li class="sales-locations__item">
+              <i
+                class="additional-section__entry-icon icon-home"
+                aria-hidden="true"
+              ></i>
+              <p class="additional-section__entry-icon-text">Direkt ab Hof</p>
+            </li>
 
-            <div class="desktop-columns_mobile-rows">
-              <div class="additional-section__entry">
-                <a
-                  class="additional-section__entry-icon-text additional-section__entry-link"
-                  href="https://www.damhirschzucht.ch/unsere-produkte/hofladen/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="additional-section__entry-icon icon-home"></i>
-                  <span>Hofladen Loostrasse <br />Braunau</span>
-                </a>
-              </div>
-              <div class="additional-section__entry">
-                <a
-                  class="additional-section__entry-icon-text additional-section__entry-link"
-                  href="http://www.dorfmarkt-zentrum.ch/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="additional-section__entry-icon icon-basket"></i>
-                  <span>Dorfmarkt Zentrum <br />Tobel</span>
-                </a>
-              </div>
-            </div>
+            <li class="sales-locations__item">
+              <a
+                class="additional-section__entry-link"
+                href="https://www.hoflaedeli-fueglister.ch/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i
+                  class="additional-section__entry-icon icon-home"
+                  aria-hidden="true"
+                ></i>
+                <p class="additional-section__entry-icon-text">
+                  Hoflädeli Füglister <br />Braunau
+                </p>
+              </a>
+            </li>
 
-            <div class="desktop-columns_mobile-rows">
-              <div class="additional-section__entry">
-                <a
-                  class="additional-section__entry-icon-text additional-section__entry-link"
-                  href="http://www.dorfmarkt-vita.ch/"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  <i class="additional-section__entry-icon icon-basket"></i>
-                  <span>Dorfmarkt VITAplus <br />Wuppenau</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <h2 class="additional-section__subtitle">Auszeichnungen</h2>
+            <li class="sales-locations__item">
+              <a
+                class="additional-section__entry-link"
+                href="https://www.damhirschzucht.ch/unsere-produkte/hofladen/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i
+                  class="additional-section__entry-icon icon-home"
+                  aria-hidden="true"
+                ></i>
+                <p class="additional-section__entry-icon-text">
+                  Hofladen Loostrasse <br />Braunau
+                </p>
+              </a>
+            </li>
+
+            <li class="sales-locations__item">
+              <a
+                class="additional-section__entry-link"
+                href="http://www.dorfmarkt-zentrum.ch/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i
+                  class="additional-section__entry-icon icon-basket"
+                  aria-hidden="true"
+                ></i>
+                <p class="additional-section__entry-icon-text">
+                  Dorfmarkt Zentrum <br />Tobel
+                </p>
+              </a>
+            </li>
+
+            <li class="sales-locations__item">
+              <a
+                class="additional-section__entry-link"
+                href="http://www.dorfmarkt-vita.ch/"
+                target="_blank"
+                rel="noopener"
+              >
+                <i
+                  class="additional-section__entry-icon icon-basket"
+                  aria-hidden="true"
+                ></i>
+                <p class="additional-section__entry-icon-text">
+                  Dorfmarkt VITAplus <br />Wuppenau
+                </p>
+              </a>
+            </li>
+          </ul>
+
+          <h3 class="additional-section__subtitle">Auszeichnungen</h3>
           <p class="additional-section__text">
             Bereits zwei Mal wurde unser Süssmost an der Schweizer
             Fruchtsaftprämierung mit Gold ausgezeichnet.
@@ -367,7 +385,7 @@
         class="additional-section additional-section--orange"
       >
         <div class="wrapper">
-          <h1 class="additional-section__title">Kontakt</h1>
+          <h2 class="additional-section__title">Kontakt</h2>
           <p class="additional-section__text">
             Bei Fragen oder Bestellungen können Sie uns folgendermassen
             erreichen:
@@ -380,6 +398,7 @@
               >
                 <i
                   class="additional-section__entry-icon icon-phone-outline"
+                  aria-hidden="true"
                 ></i>
                 <span>071 911 76 47</span>
               </a>
@@ -389,7 +408,10 @@
                 class="additional-section__entry-icon-text additional-section__entry-link"
                 href="mailto:windler.suemo@bluewin.ch"
               >
-                <i class="additional-section__entry-icon icon-mail"></i>
+                <i
+                  class="additional-section__entry-icon icon-mail"
+                  aria-hidden="true"
+                ></i>
                 <span>windler.suemo@bluewin.ch</span>
               </a>
             </div>
@@ -400,7 +422,10 @@
                 rel="noopener"
                 target="_blank"
               >
-                <i class="additional-section__entry-icon icon-map-o"></i>
+                <i
+                  class="additional-section__entry-icon icon-map-o"
+                  aria-hidden="true"
+                ></i>
                 <span
                   >Max und Uta Windler <br />Heid 320 <br />9502 Braunau</span
                 >
@@ -419,7 +444,7 @@
                 class="additional-section__entry-icon-text additional-section__entry-link"
                 href="/datenschutz.html"
               >
-                &nbsp;Datenschutz&nbsp;
+                Datenschutz
               </a>
             </div>
           </div>

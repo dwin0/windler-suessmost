@@ -42,11 +42,13 @@
     +text-font-size
     color: inherit
     word-wrap: break-word
+    margin: 0
 
   &__entry-link
     text-decoration: none
     display: flex
     flex-direction: column
+    color: inherit
     &:hover
       text-decoration: underline
 
@@ -59,3 +61,19 @@
   +minMedium
     flex-direction: row
     justify-content: space-around
+
+.sales-locations
+  display: grid
+  grid-template-columns: 1fr
+  justify-items: center
+  max-width: $max-width
+  margin: auto
+  padding: 0
+  gap: 30px
+  +minMedium
+    grid-template-columns: 1fr 1fr
+    gap: 50px
+
+  &__item
+    display: flex
+    flex-direction: column
