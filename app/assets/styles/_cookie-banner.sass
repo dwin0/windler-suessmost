@@ -1,0 +1,39 @@
+.cookie-banner
+    position: fixed
+    max-width: 500px
+    z-index: 1
+    bottom: 0
+    background: $white
+    left: 0
+    border: 5px solid $orange
+    padding: 15px
+    margin: 15px
+
+    h2
+        +banner-title-font-size
+        margin-top: 0
+
+    button,
+    p
+        +banner-text-font-size
+
+    button
+        background: none
+        cursor: pointer
+
+    &__close
+        position: absolute
+        top: 0
+        right: 0
+        padding: 10px 20px
+        border: none
+
+    &__button-wrapper
+        display: flex
+        justify-content: space-around
+
+    &__accept,
+    &__decline
+        border: 1px solid $orange
+        padding: 10px
+

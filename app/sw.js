@@ -1,4 +1,4 @@
-const cacheName = "windler-cache-v7";
+const cacheName = "windler-cache-v8";
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -12,6 +12,7 @@ self.addEventListener("install", (event) => {
           "/favicon.ico",
           "/assets/dist/main.css",
           "/assets/dist/main.js",
+          "/assets/dist/cookieBanner.js",
           "/assets/dist/fontello.woff2",
           "/assets/dist/roboto-v18-latin-regular.woff2",
           "/assets/dist/roboto-v18-latin-900.woff2",
