@@ -2,10 +2,14 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: ["./app/assets/js/main.js", "./app/assets/styles/main.sass"],
+  entry: {
+    main: "./app/assets/js/main.js",
+    cookieBanner: "./app/assets/js/cookieBanner.js",
+    css: "./app/assets/styles/main.sass",
+  },
   output: {
     path: __dirname + "/app/assets/dist",
-    filename: "main.js",
+    filename: "[name].js",
   },
   module: {
     rules: [
