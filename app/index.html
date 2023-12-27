@@ -116,6 +116,7 @@
       posthog.init("phc_wBl7xPQWJ3lIcbaEL6OQt6qkZwpGVVytgwnSEbCaH6e", {
         api_host: "https://eu.posthog.com",
         autocapture: false,
+        opt_out_capturing_by_default: true,
         loaded: function (posthog) {
           window.setupCookieBanner(posthog);
         },
