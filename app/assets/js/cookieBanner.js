@@ -18,23 +18,38 @@ const banner = `
     </div>
 `;
 
+// https://developers.google.com/tag-platform/security/guides/privacy#disable-analytics
 const googleAnalyticsDisbleString = "ga-disable-G-H6JLVDXXHW";
 
 function googleAnalyticsOptIn() {
   window[googleAnalyticsDisbleString] = false;
+  try {
+    localStorage.setItem(googleAnalyticsDisbleString, "false");
+  } catch (error) {
+    console.error("Can not access local storage", error);
+  }
 }
 function googleAnalyticsOptOut() {
   window[googleAnalyticsDisbleString] = true;
+  try {
+    localStorage.setItem(googleAnalyticsDisbleString, "true");
+  } catch (error) {
+    console.error("Can not access local storage", error);
+  }
+}
+
+function initGoogleAnalyticsTracking() {
+  try {
+    const disableTracking =
+      localStorage.getItem(googleAnalyticsDisbleString) === "true";
+    window[googleAnalyticsDisbleString] = disableTracking;
+  } catch (error) {
+    console.error("Can not access local storage", error);
+  }
 }
 
 function setupCookieBanner(posthog) {
-  if (posthog.has_opted_in_capturing()) {
-    googleAnalyticsOptIn();
-    return;
-  }
-
-  if (posthog.has_opted_out_capturing()) {
-    googleAnalyticsOptOut();
+  if (posthog.has_opted_in_capturing() || posthog.has_opted_out_capturing()) {
     return;
   }
 
@@ -67,4 +82,5 @@ function setupCookieBanner(posthog) {
   }
 }
 
+window.initGoogleAnalyticsTracking = initGoogleAnalyticsTracking;
 window.setupCookieBanner = setupCookieBanner;
