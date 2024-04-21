@@ -18,6 +18,9 @@ html
     scroll-behavior: smooth
     scroll-padding-block-start: 50px
 
+    @media (prefers-reduced-motion)
+        scroll-behavior: auto
+
     +minMedium
         scroll-padding-block-start: 65px
 

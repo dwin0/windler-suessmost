@@ -6,9 +6,19 @@ import {
   highlightCurrentSection,
 } from "./modules/Navigation";
 
-// STARTLoad header video if desktop
+// START Load header video if desktop
 
-if (window.innerWidth >= 768) {
+function removeVideoBanner() {
+  document.getElementById("header-video-wrapper").remove();
+}
+
+const prefersReducedMotion =
+  window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
+  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+
+if (prefersReducedMotion) {
+  removeVideoBanner();
+} else if (window.innerWidth >= 768) {
   const script = document.createElement("script");
   script.setAttribute("src", "https://play.vidyard.com/embed/v4.js");
   script.setAttribute("type", "text/javascript");
@@ -16,9 +26,18 @@ if (window.innerWidth >= 768) {
 
   window.onVidyardAPI = (vidyardEmbed) => {
     vidyardEmbed.api.addReadyListener((_, player) => {
-      player.on("playerComplete", () => {
-        document.getElementById("header-video-wrapper").style.display = "none";
+      player.on("ready", () => {
+        // hide from screenreader, as it's purely decorative
+        document
+          .querySelectorAll("#header-video-wrapper [aria-label]")
+          .forEach((element) => {
+            element.removeAttribute("aria-label");
+            element.setAttribute("aria-hidden", "true");
+            element.setAttribute("tabindex", "-1");
+          });
       });
+
+      player.on("playerComplete", removeVideoBanner);
     });
   };
 }

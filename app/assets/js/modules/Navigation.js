@@ -1,4 +1,4 @@
-import { addClass, removeClass, getById } from './Shortcuts'
+import { addClass, removeClass } from './Shortcuts'
 
 export function createStickyNavigation(navigation, header, isMobile) {
     if(isMobile) {

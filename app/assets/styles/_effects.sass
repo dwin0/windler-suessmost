@@ -3,6 +3,12 @@
   animation-duration: .5s
   animation-fill-mode: both
 
+  @media (prefers-reduced-motion)
+    animation-name: none
+    opacity: 1
+    transform: none
+    box-shadow: 0px 5px 8px rgba($black, 0.3)
+
 @keyframes fadeInDown
   0%
     opacity: 0
@@ -27,6 +33,14 @@
   animation-duration: .8s
   animation-fill-mode: both
   opacity: 1
+
+  @media (prefers-reduced-motion)
+    @if $direction == 'left'
+      animation-name: none
+      transform: rotate(5deg)
+    @else
+      animation-name: none
+      transform: rotate(-7deg)
 
 @keyframes revealFromLeft
   0%

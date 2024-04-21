@@ -125,7 +125,11 @@
   <body>
     <header>
       <div class="header" id="header">
-        <div class="header__video-wrapper" id="header-video-wrapper">
+        <div
+          class="header__video-wrapper"
+          id="header-video-wrapper"
+          aria-hidden="true"
+        >
           <img
             class="header__video-thumbnail vidyard-player-embed"
             src="https://play.vidyard.com/roQNHEnoxZaJJVc9f5JG6M.jpg"
@@ -133,6 +137,8 @@
             data-v="4"
             data-type="inline"
             data-autoplay="1"
+            data-muted="1"
+            data-hidden_controls="1"
             data-disable_analytics="1"
             data-new_visitor="1"
           />
