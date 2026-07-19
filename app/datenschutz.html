@@ -36,13 +36,10 @@
     <link rel="icon" href="/favicon.ico?v=1" />
 
     <!--stylesheets-->
-    <link rel="stylesheet" href="assets/dist/main.css?v=1" type="text/css" />
+    <link rel="stylesheet" href="./assets/styles/main.sass" />
     <title>Datenschutz Windler Süssmost</title>
 
-    <script
-      src="assets/dist/cookieBanner.js?v=6"
-      type="text/javascript"
-    ></script>
+    <script type="module" src="./assets/js/cookieBanner.js"></script>
     <script>
       !(function (t, e) {
         var o, n, p, r;
@@ -93,7 +90,17 @@
       posthog.init("phc_wBl7xPQWJ3lIcbaEL6OQt6qkZwpGVVytgwnSEbCaH6e", {
         api_host: "https://eu.posthog.com",
         loaded: function (posthog) {
-          window.setupCookieBanner(posthog);
+          const runSetup = () => {
+            if (typeof window.setupCookieBanner === "function") {
+              window.setupCookieBanner(posthog);
+              return true;
+            }
+            return false;
+          };
+
+          if (!runSetup()) {
+            window.addEventListener("load", runSetup, { once: true });
+          }
         },
       });
     </script>

@@ -1,32 +1,13 @@
 {
   "name": "windler-suessmost",
+  "type": "module",
   "scripts": {
-    "dev": "webpack serve --mode development",
-    "build": "webpack --mode production",
-    "update": "npx npm-check -u"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "dependencies": {
-    "normalize-scss": "^7.0.1"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
-    "babel-loader": "^9.1.3",
-    "css-loader": "^6.8.1",
-    "css-minimizer-webpack-plugin": "^5.0.1",
-    "mini-css-extract-plugin": "^2.7.6",
-    "postcss": "^8.4.27",
-    "postcss-loader": "^7.3.3",
-    "postcss-preset-env": "^9.1.1",
-    "sass": "^1.65.1",
-    "sass-loader": "^13.3.2",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
+    "sass": "^1.101.0",
+    "vite": "^8.1.5"
   }
 }
