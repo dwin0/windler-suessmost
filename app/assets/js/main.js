@@ -61,5 +61,5 @@ createStickyNavigation(navigation, getById("header"), isMobile);
 highlightCurrentSection(document.querySelectorAll("section[id]"), navigation);
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./sw.js");
+  navigator.serviceWorker.register("/sw.js");
 }
