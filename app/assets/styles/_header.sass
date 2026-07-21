@@ -1,3 +1,7 @@
+@use "colors"
+@use "fonts"
+@use "media-queries"
+
 $circle-min-size: 240px
 $circle-size: 42vw
 
@@ -9,9 +13,9 @@ $circle-size: 42vw
   overflow: hidden
 
   &__video-wrapper
-    +maxSmall
+    +media-queries.maxSmall
       display: none
-    +minMedium
+    +media-queries.minMedium
       pointer-events: none
       margin-top: -10px // prevent black border top
 
@@ -26,13 +30,13 @@ $circle-size: 42vw
     top: 50%
     left: 50%
     transform: translate(-50%, -50%)
-    background-color: $white-transparent
+    background-color: colors.$white-transparent
     border-radius: 50%
     width: $circle-min-size
     height: $circle-min-size
     max-width: 480px
     max-height: 480px
-    +minSmall
+    +media-queries.minSmall
       width: $circle-size
       height: $circle-size
 
@@ -44,45 +48,45 @@ $circle-size: 42vw
     width: 100%
     height: 100%
     text-align: center
-    +atMedium
+    +media-queries.atMedium
       width: 85%
 
   &__title
-    +roboto-bold
+    +fonts.roboto-bold
     text-transform: uppercase
     letter-spacing: 1px
     font-size: 30px
     margin: 30px 0 0
-    +atSmall
+    +media-queries.atSmall
       font-size: 35px
       margin-top: 35px
-    +atMedium
+    +media-queries.atMedium
       font-size: 40px
       margin-top: 8vw
-    +atLarge
+    +media-queries.atLarge
       font-size: 60px
       margin-top: 60px
 
   &__subtitle
-    +brush-script()
-    color: $green
+    +fonts.brush-script()
+    color: colors.$green
     transform: rotate(-6deg) scaleX(1.2)
     margin-top: 10px
     padding: 0 10%
-    +atSmall
+    +media-queries.atSmall
       margin-top: 3vw
       font-size: 6vw
-    +atMedium
+    +media-queries.atMedium
       font-size: 45px
       margin-top: 3vw
-    +atLarge
+    +media-queries.atLarge
       font-size: 60px
       margin-top: 40px
 
   &__down-arrow
     text-decoration: none
-    background: $green
-    color: $white
+    background: colors.$green
+    color: colors.$white
     position: absolute
     bottom: 0
     left: 50%
@@ -93,11 +97,11 @@ $circle-size: 42vw
     font-size: 38px
     &::before
       margin: 0
-    +atMedium
+    +media-queries.atMedium
       width: 50px
       height: 50px
       font-size: 48px
-    +atLarge
+    +media-queries.atLarge
       width: 60px
       height: 60px
       font-size: 56px

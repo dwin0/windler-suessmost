@@ -1,3 +1,7 @@
+@use "colors"
+@use "fonts"
+@use "media-queries"
+
 $side-padding-mobile: 20px
 $side-padding-desktop: 40px
 $top-padding-large: 50px
@@ -5,73 +9,73 @@ $top-padding-medium: 30px
 $max-width: 1200px
 
 body
-  +roboto-regular
+  +fonts.roboto-regular
   font-size: 20px
-  color: $black
-  +maxSmall
-    border-top: 50px solid $white
+  color: colors.$black
+  +media-queries.maxSmall
+    border-top: 50px solid colors.$white
 
 img
   max-width: 100%
 
 .wrapper
   padding: 0 $side-padding-mobile
-  +minMedium
+  +media-queries.minMedium
     padding: 0 $side-padding-desktop
   
   &--data-privacy
     padding-top: 40px
 
 =section-orange()
-  background: $orange
-  color: $white
+  background: colors.$orange
+  color: colors.$white
 
 =section-white()
-  background: $white
-  color: $orange
+  background: colors.$white
+  color: colors.$orange
 
 =padding-top()
   padding-top: $top-padding-medium
-  +atLarge
+  +media-queries.atLarge
     padding-top: $top-padding-large
 
 =title-font-size()
-  +roboto-regular
+  +fonts.roboto-regular
   font-weight: 700
   font-size: 40px
-  +atMedium
+  +media-queries.atMedium
     font-size: 45px
-  +atLarge
+  +media-queries.atLarge
     font-size: 50px
 
 =subtitle-font-size()
-  +roboto-bold
+  +fonts.roboto-bold
   font-size: 30px
   letter-spacing: .3px
-  +atMedium
+  +media-queries.atMedium
     font-size: 34px
-  +atLarge
+  +media-queries.atLarge
     font-size: 38px
 
 =text-font-size()
-  +roboto-regular
+  +fonts.roboto-regular
   font-size: 20px
-  +atMedium
+  +media-queries.atMedium
     font-size: 22px
-  +atLarge
+  +media-queries.atLarge
     font-size: 24px
 
 =icon-font-size()
   font-size: 45px
-  +atMedium
+  +media-queries.atMedium
     font-size: 55px
-  +atLarge
+  +media-queries.atLarge
     font-size: 60px
 
 =banner-title-font-size()
-  +roboto-regular
+  +fonts.roboto-regular
   font-size: 20px
 
 =banner-text-font-size()
-  +roboto-regular
+  +fonts.roboto-regular
   font-size: 16px

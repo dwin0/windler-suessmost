@@ -1,11 +1,17 @@
+@use "colors"
+@use "effects"
+@use "fonts"
+@use "global"
+@use "media-queries"
+
 .navigation
-  background: $white
+  background: colors.$white
   z-index: 10
   position: fixed
   top: 0
   width: 100%
   height: 50px
-  +minMedium
+  +media-queries.minMedium
     position: static
     height: unset
 
@@ -16,13 +22,13 @@
     -webkit-transform: translate3d(0, 0, 0)
     -webkit-backface-visibility: hidden
     top: 0
-    box-shadow: 0px 5px 8px rgba($black, 0.3)
+    box-shadow: 0px 5px 8px rgba(colors.$black, 0.3)
 
   &__mobile
     width: 100%
     height: 50px
-    box-shadow: 0px 5px 8px rgba($black, 0.3)
-    +minMedium
+    box-shadow: 0px 5px 8px rgba(colors.$black, 0.3)
+    +media-queries.minMedium
       display: none
 
   &__mobile-container
@@ -39,7 +45,7 @@
   &__mobile-icon::before,
   &__mobile-icon::after,
   &__mobile-icon-inner
-    background-color: $black
+    background-color: colors.$black
     border-radius: 4px
     content: ''
     display: block
@@ -56,59 +62,59 @@
       transform: scale(0)
 
   &__mobile-text
-    +roboto-bold
+    +fonts.roboto-bold
     margin: 0
 
   &__list
-    max-width: $max-width
+    max-width: global.$max-width
     margin: 0 auto
     padding: 0
     list-style: none
-    +maxSmall
+    +media-queries.maxSmall
       display: none
-    +minMedium
+    +media-queries.minMedium
       display: flex
 
     &--visible
-      +fadeInDown
+      +effects.fadeInDown
       display: block
       margin: 0 -20px
-      background: $white
+      background: colors.$white
 
       li
         width: 100%
 
   &__entry
-    +roboto-bold
+    +fonts.roboto-bold
     font-size: 20px
     text-align: center
     flex: 1 1 calc(100% / 3)
     width: calc(100% / 3)
-    +atLarge
+    +media-queries.atLarge
       font-size: 28px
 
   &__link
     display: block
     text-decoration: none
-    color: $orange
+    color: colors.$orange
     width: 100%
     height: 65px
     padding: 20px 0
     box-sizing: border-box
-    +atLarge
+    +media-queries.atLarge
       padding: 16px 0 24px
     &:hover
-      background: $orange
-      color: $white
-      border-bottom: 5px solid $white
+      background: colors.$orange
+      color: colors.$white
+      border-bottom: 5px solid colors.$white
     &--current-section
-      +maxSmall
-        border-left: 7px solid $black
-        border-right: 7px solid $black
-        color: $black
-      +minMedium
-        border-top: 7px solid $orange
+      +media-queries.maxSmall
+        border-left: 7px solid colors.$black
+        border-right: 7px solid colors.$black
+        color: colors.$black
+      +media-queries.minMedium
+        border-top: 7px solid colors.$orange
         padding-top: 13px
-      +atLarge
+      +media-queries.atLarge
         padding: 9px
       

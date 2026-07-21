@@ -1,8 +1,10 @@
+@use "effects"
+
 .reveal-on-scroll
     opacity: 0
 
     &--fade-in-left
-        +reveal('left')
+        +effects.reveal('left')
 
     &--fade-in-right
-        +reveal('right')
+        +effects.reveal('right')

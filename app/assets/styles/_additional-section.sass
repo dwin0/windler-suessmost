@@ -1,45 +1,48 @@
+@use "global"
+@use "media-queries"
+
 .additional-section
-  +padding-top
+  +global.padding-top
   text-align: center
   padding-bottom: 40px
 
   &--orange
-    +section-orange
+    +global.section-orange
 
   &--white
-    +section-white
+    +global.section-white
 
   &--data-protection
     padding-bottom: 0
 
   &__title
-    +title-font-size
+    +global.title-font-size
     margin: 0
 
   &__subtitle
-    +subtitle-font-size
+    +global.subtitle-font-size
     margin: 80px 0 0
 
   &__text
-    +text-font-size
+    +global.text-font-size
     margin-bottom: 30px
   
   &__entry
     margin-bottom: 30px
     display: flex
     flex-direction: column
-    +minMedium
+    +media-queries.minMedium
       margin-bottom: 50px
       width: calc(100% / 3)
 
   &__entry-icon
-    +icon-font-size
+    +global.icon-font-size
     padding: 15px 0
-    +atMedium
+    +media-queries.atMedium
       padding-top: 20px
 
   &__entry-icon-text
-    +text-font-size
+    +global.text-font-size
     color: inherit
     word-wrap: break-word
     margin: 0
@@ -56,9 +59,9 @@
 .desktop-columns_mobile-rows
   display: flex
   flex-direction: column
-  max-width: $max-width
+  max-width: global.$max-width
   margin: auto
-  +minMedium
+  +media-queries.minMedium
     flex-direction: row
     justify-content: space-around
 
@@ -66,11 +69,11 @@
   display: grid
   grid-template-columns: 1fr
   justify-items: center
-  max-width: $max-width
+  max-width: global.$max-width
   margin: auto
   padding: 0
   gap: 30px
-  +minMedium
+  +media-queries.minMedium
     grid-template-columns: 1fr 1fr
     gap: 50px
 

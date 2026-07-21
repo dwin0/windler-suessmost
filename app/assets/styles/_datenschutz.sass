@@ -1,16 +1,18 @@
+@use "global"
+
 .data-protection
 	max-width: 800px
 	margin: auto
 
 h1
-	+title-font-size()
+	+global.title-font-size()
 	word-break: break-word
 
 h2
-	+subtitle-font-size()
+	+global.subtitle-font-size()
 
 p
-	+text-font-size()
+	+global.text-font-size()
 
 a
 	word-break: break-word

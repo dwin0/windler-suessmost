@@ -1,9 +1,13 @@
+@use "colors"
+@use "global"
+@use "media-queries"
+
 .products
-  +section-orange
+  +global.section-orange
 
   &__title
-    +padding-top
-    +title-font-size
+    +global.padding-top
+    +global.title-font-size
     text-align: center
     margin: 0 0 -1px
 
@@ -11,7 +15,7 @@
   padding: 35px 0
   min-height: 400px
   margin-bottom: -1px
-  +atMedium
+  +media-queries.atMedium
     padding: 15px 20px
 
   &:last-of-type
@@ -22,28 +26,28 @@
   &__text
     text-align: center
     width: 100%
-    +minMedium
+    +media-queries.minMedium
       text-align: left
 
   &__icon
-    +icon-font-size
+    +global.icon-font-size
 
   &__title
-    +subtitle-font-size
+    +global.subtitle-font-size
     margin: 10px 0 0
-    +atLarge
+    +media-queries.atLarge
       margin-top: 20px
 
   &__text
-    +text-font-size
+    +global.text-font-size
     margin: 20px auto 0
-    +atLarge
+    +media-queries.atLarge
       margin: 20px 0 0
 
   &__list
-    +text-font-size
+    +global.text-font-size
     margin: 20px auto 0
-    +minMedium
+    +media-queries.minMedium
       width: 100%
       margin: 20px 0 0 20px
 
@@ -52,14 +56,14 @@
     max-width: 400px
     margin: auto
     height: auto
-    box-shadow: 5px 5px 20px 0px $orange-shadow
+    box-shadow: 5px 5px 20px 0px colors.$orange-shadow
 
   &:nth-of-type(odd) &__image
-    +atMedium
+    +media-queries.atMedium
       margin-left: 10px
 
   &:nth-of-type(even) &__image
-    +atMedium
+    +media-queries.atMedium
       margin-right: 10px
 
 .columns
@@ -79,13 +83,13 @@
     flex-wrap: wrap
     align-content: flex-end
     padding: 20px 0
-    +maxSmall
+    +media-queries.maxSmall
       margin: auto
-    +minMedium
+    +media-queries.minMedium
       width: 50%
 
   &:nth-of-type(odd) &__column-text
-    +minMedium
+    +media-queries.minMedium
       justify-content: flex-end
       margin-left: auto
 
@@ -93,9 +97,9 @@
     width: 100%
     padding: 25px 25px 0 25px
     order: 2
-    +atSmall
+    +media-queries.atSmall
       padding: 40px
-    +minMedium
+    +media-queries.minMedium
       width: 50%
       order: 0
       padding: 40px 40px 0 40px

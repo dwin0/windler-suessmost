@@ -1,21 +1,24 @@
+@use "colors"
+@use "global"
+
 .cookie-banner
     position: fixed
     max-width: 500px
     z-index: 1
     bottom: 0
-    background: $white
+    background: colors.$white
     left: 0
-    border: 5px solid $orange
+    border: 5px solid colors.$orange
     padding: 15px
     margin: 15px
 
     h2
-        +banner-title-font-size
+        +global.banner-title-font-size
         margin-top: 0
 
     button,
     p
-        +banner-text-font-size
+        +global.banner-text-font-size
 
     button
         background: none
@@ -34,6 +37,6 @@
 
     &__accept,
     &__decline
-        border: 1px solid $orange
+        border: 1px solid colors.$orange
         padding: 10px
 

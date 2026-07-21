@@ -1,18 +1,18 @@
-@import normalize
-@import _colors
-@import _effects
-@import _reveal-on-scroll
-@import _media-queries
-@import _fonts
-@import _icons
-@import _global
-@import _header
-@import _navigation
-@import _product
-@import _additional-section
-@import _about-us
-@import _datenschutz
-@import _cookie-banner
+@use "normalize"
+@use "_colors"
+@use "_effects"
+@use "_reveal-on-scroll"
+@use "_media-queries"
+@use "_fonts"
+@use "_icons"
+@use "_global"
+@use "_header"
+@use "_navigation"
+@use "_product"
+@use "_additional-section"
+@use "_about-us"
+@use "_datenschutz"
+@use "_cookie-banner"
 
 html
     scroll-behavior: smooth
@@ -21,7 +21,7 @@ html
     @media (prefers-reduced-motion)
         scroll-behavior: auto
 
-    +minMedium
+    +media-queries.minMedium
         scroll-padding-block-start: 65px
 
 main
