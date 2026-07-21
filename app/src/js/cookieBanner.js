@@ -19,7 +19,8 @@ const banner = `
 `;
 
 function setupCookieBanner(posthog) {
-  if (posthog.has_opted_in_capturing() || posthog.has_opted_out_capturing()) {
+  const consentStatus = posthog.get_explicit_consent_status();
+  if (consentStatus === "granted" || consentStatus === "denied") {
     return;
   }
 
