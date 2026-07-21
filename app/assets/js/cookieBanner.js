@@ -28,21 +28,19 @@ function setupCookieBanner(posthog) {
       .children[0];
     const closeCookieBanner = () => getById(cookieBanner).remove();
 
-    document.addEventListener("DOMContentLoaded", () => {
-      document.body.prepend(bannerHtml);
+    document.body.prepend(bannerHtml);
 
-      onClick(getById(cookieBannerClose), () => {
-        posthog.opt_out_capturing();
-        closeCookieBanner();
-      });
-      onClick(getById(cookieBannerAccept), () => {
-        posthog.opt_in_capturing();
-        closeCookieBanner();
-      });
-      onClick(getById(cookieBannerDecline), () => {
-        posthog.opt_out_capturing();
-        closeCookieBanner();
-      });
+    onClick(getById(cookieBannerClose), () => {
+      posthog.opt_out_capturing();
+      closeCookieBanner();
+    });
+    onClick(getById(cookieBannerAccept), () => {
+      posthog.opt_in_capturing();
+      closeCookieBanner();
+    });
+    onClick(getById(cookieBannerDecline), () => {
+      posthog.opt_out_capturing();
+      closeCookieBanner();
     });
   } catch (error) {
     console.error("Could not append cookie banner", error);
