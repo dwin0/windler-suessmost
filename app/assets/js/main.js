@@ -1,3 +1,4 @@
+import "../styles/main.sass";
 import slideIn from "./modules/ImageSlideIn";
 import { getById } from "./modules/Shortcuts";
 import Menu from "./modules/Menu";
