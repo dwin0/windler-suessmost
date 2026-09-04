@@ -21,13 +21,15 @@ export default class Menu {
   };
 
   toggleMenu = () => {
-    toggleClass(this.menuList, "navigation__list--visible");
+    const isOpen = toggleClass(this.menuList, "navigation__list--visible");
     toggleClass(this.menuIcon, "navigation__mobile-icon--close");
+    this.menuButton.setAttribute("aria-expanded", isOpen.toString());
   };
 
   closeMenu = () => {
     removeClass(this.menuList, "navigation__list--visible");
     removeClass(this.menuIcon, "navigation__mobile-icon--close");
+    this.menuButton.setAttribute("aria-expanded", "false");
   };
 
   getMenuHeight = () => {

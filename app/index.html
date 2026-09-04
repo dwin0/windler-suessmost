@@ -184,14 +184,17 @@
         </div>
       </div>
       <nav class="navigation" id="navigation">
-        <div class="navigation__mobile" id="menu-button">
-          <div class="navigation__mobile-container">
-            <p class="navigation__mobile-text">MENU</p>
-            <div class="navigation__mobile-icon">
-              <div class="navigation__mobile-icon-inner"></div>
-            </div>
-          </div>
-        </div>
+        <button
+          class="navigation__mobile"
+          id="menu-button"
+          aria-controls="menu-list"
+          aria-expanded="false"
+        >
+          <span class="navigation__mobile-text">MENU</span>
+          <span class="navigation__mobile-icon" aria-hidden="true">
+            <span class="navigation__mobile-icon-inner"></span>
+          </span>
+        </button>
         <div class="wrapper">
           <ul class="navigation__list" id="menu-list">
             <li class="navigation__entry">
