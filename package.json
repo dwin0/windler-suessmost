@@ -1,5 +1,10 @@
 {
   "name": "windler-suessmost",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": "24.11.1",
+    "pnpm": "11.25.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
