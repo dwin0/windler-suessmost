@@ -1,4 +1,4 @@
-const cacheName = "windler-cache-v10";
+const cacheName = "windler-cache-v11";
 const staticAssets = [
   "/index.html?v=1",
   "/datenschutz.html?v=1",

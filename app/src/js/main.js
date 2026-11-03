@@ -9,38 +9,45 @@ import {
 
 // START Load header video if desktop
 
-function removeVideoBanner() {
-  document.getElementById("header-video-wrapper").remove();
-}
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+).matches;
 
-const prefersReducedMotion =
-  window.matchMedia(`(prefers-reduced-motion: reduce)`) === true ||
-  window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+if (!prefersReducedMotion && window.innerWidth >= 768) {
+  const iframe = document.getElementById("header-video-player");
+  const videoWrapper = document.getElementById("header-video-wrapper");
+  const embedUrl = new URL(iframe.dataset.src);
+  embedUrl.searchParams.set("origin", window.location.origin);
+  iframe.src = embedUrl.href;
 
-if (prefersReducedMotion) {
-  removeVideoBanner();
-} else if (window.innerWidth >= 768) {
   const script = document.createElement("script");
-  script.setAttribute("src", "https://play.vidyard.com/embed/v4.js");
-  script.setAttribute("type", "text/javascript");
-  document.body.appendChild(script);
+  script.src = "https://www.youtube.com/iframe_api";
+  script.async = true;
 
-  window.onVidyardAPI = (vidyardEmbed) => {
-    vidyardEmbed.api.addReadyListener((_, player) => {
-      player.on("ready", () => {
-        // hide from screenreader, as it's purely decorative
-        document
-          .querySelectorAll("#header-video-wrapper [aria-label]")
-          .forEach((element) => {
-            element.removeAttribute("aria-label");
-            element.setAttribute("aria-hidden", "true");
-            element.setAttribute("tabindex", "-1");
-          });
-      });
-
-      player.on("playerComplete", removeVideoBanner);
+  window.onYouTubeIframeAPIReady = () => {
+    new window.YT.Player(iframe, {
+      events: {
+        onReady: ({ target }) => {
+          target.mute();
+          target.playVideo();
+        },
+        onStateChange: ({ data }) => {
+          if (data === window.YT.PlayerState.PLAYING) {
+            window.setTimeout(() => {
+              videoWrapper.classList.remove("header__video-wrapper--loading");
+            }, 1500);
+          } else if (data === window.YT.PlayerState.ENDED) {
+            videoWrapper.remove();
+          }
+        },
+        onError: () => {
+          videoWrapper.remove();
+        },
+      },
     });
   };
+
+  document.body.appendChild(script);
 }
 
 // END Load header video
